@@ -1,0 +1,69 @@
+body,html{
+  margin: 0;
+  padding: 0;
+}
+body{
+  display: flex;
+  flex-direction: column;
+  height:100%;
+}
+.navBar{
+  display: flex;
+  align-items: center;
+  width:100%;
+  height: 100px;
+  background-color: aliceblue;
+}
+#title{
+  margin: 0;
+  padding: 0;
+  font-size: 32px;
+  font-family: 'Lato', sans-serif; 
+  font-weight: bolder;
+  margin-left: 40px;
+  color: indigo;
+}
+#search{
+  height: 50px;
+  padding: 5px;
+  width: auto;
+  margin-left:auto;
+  display: flex;
+  align-items: center;
+  font-size: 22px;
+  font-family: 'Lato', sans-serif; 
+  font-weight: bolder;
+  color: indigo;
+  margin-right: 30px;
+}
+#citySearch{
+  border: indigo 2px solid;
+  border-right: none;
+  width: 180px;
+  border-top-left-radius:10px;
+  border-bottom-left-radius: 10px;
+  font-size: 15px;  
+  height: 32px;
+  margin-left: 10px;
+  padding: 4px;
+  padding-left:7px;
+  font-weight: bold;
+  outline: none;
+}
+#searchButton{
+  margin: 0;
+  padding: 10xp;
+  background-color:sandybrown;
+  height: 32px;
+  border: solid 2px indigo;
+  border-left: 1px solid indigo;
+  border-top-right-radius:10px;
+  border-bottom-right-radius: 10px;
+  font-weight:700;
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  color:#3e3e3e;
+}
+#searchButton:active{
+  filter: brightness(0.9);
+}
