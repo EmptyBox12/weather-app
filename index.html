@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Lato&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap"
       rel="stylesheet"
     />
   </head>
@@ -23,7 +23,33 @@
       </div>
     </div>
     <div class="content">
-      <div class="leftSide"></div>
+      <div class="leftSideImg">
+        <div class="leftSide">
+          <p id="cityName">City Name</p>
+          <div class="temp">
+            <p id="temperature">18C</p>
+            <img
+              id="tempImg"
+              src="http://openweathermap.org/img/wn/01d@2x.png"
+              alt=""
+            />
+          </div>
+          <div class="bottom">
+            <div class="weather">
+              <p id="weatherMain">Clear</p>
+              <p id="weatherDescription">Description</p>
+            </div>
+            <div class="feelsLike">
+              <p id="feelsLikeMain">12.5C</p>
+              <p id="feelsLikeText">Feels Like</p>
+            </div>
+            <div class="humidity">
+              <p id="humidityMain">12%</p>
+              <p id="humidityText">Humidity</p>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="rightSide"></div>
     </div>
     <div class="footer"></div>
