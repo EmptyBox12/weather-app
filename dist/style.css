@@ -67,3 +67,91 @@ body{
 #searchButton:active{
   filter: brightness(0.9);
 }
+.content{
+  display: flex;
+  height: 100%;
+}
+.leftSideImg{
+  background-image: url("img/cloudy.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 30%;
+  min-width: 400px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.leftSide{
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+  color: #fefefe;
+  font-size: 24px;
+  font-family: 'Lato';
+  font-weight: 400;
+  backdrop-filter: blur(3px) brightness(75%);
+  width: 100%;
+  height: 100%;
+}
+.leftSide p{
+  margin: 0;
+  padding: 0;
+}
+#cityName{
+  font-weight: 700;
+  font-size: 45px;
+
+}
+.temp{
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+#temperature{
+  font-size: 40px;
+}
+
+.weather{
+  display:flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-left: -85px;
+}
+#weatherMain{
+  font-size: 35px;
+}
+#weatherDescription{
+  font-weight: 300;
+}
+.feelsLike{
+  display:flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-left: -85px;
+}
+#feelsLikeMain{
+  font-size: 35px;
+}
+#feelsLikeText{
+  font-weight: 300;
+}
+.humidity{
+  display:flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-left: -85px;
+}
+#humidityMain{
+  font-size: 35px;
+}
+#humidityText{
+  font-weight: 300;
+}
+.bottom{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
