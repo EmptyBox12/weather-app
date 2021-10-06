@@ -14,7 +14,7 @@ async function fetchGeoData(location) {
       location = "istanbul";
     }
     let response = await fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=8aefb7776bd0f4d912dc1d33b544d3d2`,
+      `http://api.openweathermap.org/data/2.5/weather?q=${location}&appid=8aefb7776bd0f4d912dc1d33b544d3d2`,
       { mode: "cors" }
     );
     if (response.status == "404") {
@@ -32,7 +32,7 @@ async function fetchGeoData(location) {
 }
 async function fetchWeatherData(geo, unit) {
   let response = await fetch(
-    `https://api.openweathermap.org/data/2.5/onecall?lat=${geo.lat}&lon=${geo.lon}&exclude=minutely,hourly,alerts&units=${unit}&appid=8aefb7776bd0f4d912dc1d33b544d3d2`,
+    `http://api.openweathermap.org/data/2.5/onecall?lat=${geo.lat}&lon=${geo.lon}&exclude=minutely,hourly,alerts&units=${unit}&appid=8aefb7776bd0f4d912dc1d33b544d3d2`,
     { mode: "cors" }
   );
   let data = await response.json();
