@@ -63,7 +63,7 @@ export default function createCard(obj,unit) {
   //icon
   let dayIcon = document.createElement("img");
   dayIcon.classList.add("dayIcon");
-  dayIcon.src = `http://openweathermap.org/img/wn/${obj.icon}.png`;
+  dayIcon.src = `https://openweathermap.org/img/wn/${obj.icon}.png`;
   //topDay
   let topDay = document.createElement("div");
   topDay.classList.add("topDay");

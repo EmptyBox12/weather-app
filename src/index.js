@@ -14,7 +14,7 @@ async function fetchGeoData(location) {
       location = "istanbul";
     }
     let response = await fetch(
-      `http://api.openweathermap.org/data/2.5/weather?q=${location}&appid=8aefb7776bd0f4d912dc1d33b544d3d2`,
+      `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=8aefb7776bd0f4d912dc1d33b544d3d2`,
       { mode: "cors" }
     );
     if (response.status == "404") {
@@ -32,7 +32,7 @@ async function fetchGeoData(location) {
 }
 async function fetchWeatherData(geo, unit) {
   let response = await fetch(
-    `http://api.openweathermap.org/data/2.5/onecall?lat=${geo.lat}&lon=${geo.lon}&exclude=minutely,hourly,alerts&units=${unit}&appid=8aefb7776bd0f4d912dc1d33b544d3d2`,
+    `https://api.openweathermap.org/data/2.5/onecall?lat=${geo.lat}&lon=${geo.lon}&exclude=minutely,hourly,alerts&units=${unit}&appid=8aefb7776bd0f4d912dc1d33b544d3d2`,
     { mode: "cors" }
   );
   let data = await response.json();
@@ -115,7 +115,7 @@ function populateCurrent(obj) {
   }
   cityName.textContent = obj.name;
   temp.textContent = obj.current.temp + symbol;
-  icon.src = `http://openweathermap.org/img/wn/${obj.current.icon}@2x.png`;
+  icon.src = `https://openweathermap.org/img/wn/${obj.current.icon}@2x.png`;
   weatherMain.textContent = obj.current.weather;
   backgroundSelect(obj.current.weather);
   weatherDescription.textContent = obj.current.description;
