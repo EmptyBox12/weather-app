@@ -1,8 +1,12 @@
+import createCard from "./createCard.js";
 const input = document.querySelector("#citySearch");
 const submit = document.querySelector("#searchButton");
+const toggle = document.querySelector("#togBtn");
+const display = document.querySelector(".display");
+let currentCity ="istanbul";
 let unit = "metric";
-let metric = true;
-let fahrenheit = false;
+let symbol = "C";
+
 
 async function fetchGeoData(location) {
   try {
@@ -46,7 +50,7 @@ function cityObject(object, name) {
   newObject.current.description = object.current.weather[0].description;
   newObject.daily = [];
   object.daily.forEach((element, index) => {
-    if (index == 0) {
+    if (index == 0 || index== 7) {
       return;
     }
     let day = {};
@@ -61,6 +65,7 @@ function cityObject(object, name) {
     newObject.daily.push(day);
   });
   populateCurrent(newObject);
+  populateCard(newObject.daily);
 }
 
 function convertDay(date) {
@@ -103,21 +108,48 @@ function populateCurrent(obj) {
   const weatherDescription = document.querySelector("#weatherDescription");
   const feelsLike = document.querySelector("#feelsLikeMain");
   const humidity = document.querySelector("#humidityMain");
-
+  if(unit == "metric"){
+    symbol = "C";
+  } else{
+    symbol = "F"
+  }
   cityName.textContent = obj.name;
-  temp.textContent = obj.current.temp + "C";
+  temp.textContent = obj.current.temp + symbol;
   icon.src = `http://openweathermap.org/img/wn/${obj.current.icon}@2x.png`;
   weatherMain.textContent = obj.current.weather;
   backgroundSelect(obj.current.weather);
   weatherDescription.textContent = obj.current.description;
-  feelsLike.textContent = obj.current.feelsLike + "C";
+  feelsLike.textContent = obj.current.feelsLike + symbol;
   humidity.textContent = obj.current.humidity + "%";
 }
+function populateCard(array) {
+  clearDisplay();
+  array.forEach(item=>{
+    createCard(item,unit);
+  });
+}
 
+function clearDisplay() {
+  display.innerHTML ="";
+  
+}
+
+
+toggle.addEventListener("change", ()=>{
+  if(toggle.checked == false){
+    unit = "imperial";
+    fetchGeoData(currentCity);
+  } else if(toggle.checked == true){
+    unit = "metric";
+    fetchGeoData(currentCity);
+  }
+});
 submit.addEventListener("click", () => {
   let city = input.value.toLowerCase();
+  currentCity = city;
   fetchGeoData(city);
 });
+
 
 fetchGeoData();
 //"http://openweathermap.org/img/wn/01d@2x.png"
