@@ -1,77 +1,78 @@
-body,html{
+body,
+html {
   margin: 0;
   padding: 0;
 }
-body{
+body {
   display: flex;
   flex-direction: column;
-  height:100%;
+  height: 100%;
 }
-.navBar{
+.navBar {
   display: flex;
   align-items: center;
-  width:100%;
+  width: 100%;
   height: 100px;
   background-color: aliceblue;
 }
-#title{
+#title {
   margin: 0;
   padding: 0;
   font-size: 32px;
-  font-family: 'Lato', sans-serif; 
+  font-family: "Lato", sans-serif;
   font-weight: bolder;
   margin-left: 40px;
   color: indigo;
 }
-#search{
+#search {
   height: 50px;
   padding: 5px;
   width: auto;
-  margin-left:auto;
+  margin-left: auto;
   display: flex;
   align-items: center;
   font-size: 22px;
-  font-family: 'Lato', sans-serif; 
+  font-family: "Lato", sans-serif;
   font-weight: bolder;
   color: indigo;
   margin-right: 30px;
 }
-#citySearch{
+#citySearch {
   border: indigo 2px solid;
   border-right: none;
   width: 180px;
-  border-top-left-radius:10px;
+  border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
-  font-size: 15px;  
+  font-size: 15px;
   height: 32px;
   margin-left: 10px;
   padding: 4px;
-  padding-left:7px;
+  padding-left: 7px;
   font-weight: bold;
   outline: none;
 }
-#searchButton{
+#searchButton {
   margin: 0;
   padding: 10xp;
-  background-color:sandybrown;
+  background-color: sandybrown;
   height: 32px;
   border: solid 2px indigo;
   border-left: 1px solid indigo;
-  border-top-right-radius:10px;
+  border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
-  font-weight:700;
+  font-weight: 700;
   font-size: 15px;
   font-family: Arial, Helvetica, sans-serif;
-  color:#3e3e3e;
+  color: #3e3e3e;
 }
-#searchButton:active{
+#searchButton:active {
   filter: brightness(0.9);
 }
-.content{
+.content {
   display: flex;
   height: 100%;
 }
-.leftSideImg{
+.leftSideImg {
   background-image: url("img/cloudy.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -82,7 +83,7 @@ body{
   align-items: center;
   justify-content: center;
 }
-.leftSide{
+.leftSide {
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -90,68 +91,248 @@ body{
   align-items: center;
   color: #fefefe;
   font-size: 24px;
-  font-family: 'Lato';
+  font-family: "Lato";
   font-weight: 400;
   backdrop-filter: blur(3px) brightness(75%);
   width: 100%;
   height: 100%;
 }
-.leftSide p{
+.leftSide p {
   margin: 0;
   padding: 0;
 }
-#cityName{
+#cityName {
   font-weight: 700;
   font-size: 45px;
-
 }
-.temp{
+.temp {
   display: flex;
   align-items: center;
   gap: 60px;
 }
-#temperature{
+#temperature {
   font-size: 40px;
 }
 
-.weather{
-  display:flex;
+.weather {
+  display: flex;
   flex-direction: column;
   gap: 2px;
   margin-left: -85px;
 }
-#weatherMain{
+#weatherMain {
   font-size: 35px;
 }
-#weatherDescription{
+#weatherDescription {
   font-weight: 300;
 }
-.feelsLike{
-  display:flex;
+.feelsLike {
+  display: flex;
   flex-direction: column;
   gap: 2px;
   margin-left: -85px;
 }
-#feelsLikeMain{
+#feelsLikeMain {
   font-size: 35px;
 }
-#feelsLikeText{
+#feelsLikeText {
   font-weight: 300;
 }
-.humidity{
-  display:flex;
+.humidity {
+  display: flex;
   flex-direction: column;
   gap: 2px;
   margin-left: -85px;
 }
-#humidityMain{
+#humidityMain {
   font-size: 35px;
 }
-#humidityText{
+#humidityText {
   font-weight: 300;
 }
-.bottom{
+.bottom {
   display: flex;
   flex-direction: column;
   gap: 20px;
+}
+.rightSide {
+  background-color: indigo;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 90px;
+  height: 34px;
+}
+
+.switch input {
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #2196f3;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #2ab934;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(55px);
+  -ms-transform: translateX(55px);
+  transform: translateX(55px);
+}
+
+.on {
+  display: none;
+}
+
+.on,
+.off {
+  color: white;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  font-size: 15px;
+  font-family: Verdana, sans-serif;
+}
+
+input:checked + .slider .on {
+  display: block;
+}
+
+input:checked + .slider .off {
+  display: none;
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.unitType {
+  display: flex;
+  justify-content: flex-end;
+  padding: 2px;
+}
+.display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 10px;
+  gap: 20px;
+}
+.card p {
+  margin: 0;
+  padding: 0;
+}
+.cardImg{
+  background-image: url("img/cloudy.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 1px black solid;
+  border-radius: 15px;
+  margin-left: 20px;
+
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  color: #fefefe;
+  font-size: 20px;
+  font-weight: 400;
+  font-family: "Lato";
+  width: 250px;
+  height: 300px;
+  border-radius: 15px;
+  backdrop-filter: blur(3px) brightness(75%);
+}
+
+.day {
+  font-weight: 700;
+  font-size: 22px;
+}
+.topDay{
+  display: flex;
+  align-items: center;
+  font-size: 22px;
+  gap: 20px;
+
+}
+
+.descriptionDay{
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-left: -20px;
+}
+.descriptionMain {
+  font-size: 20px;
+}
+.descriptionDayText {
+  font-weight: 300;
+}
+.feelsLikeDay {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-left: -20px;
+}
+.feelsLikeDayMain {
+  font-size: 20px;
+}
+.feelsLikeDayText {
+  font-weight: 300;
+}
+.humidityDay {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-left: -20px;
+}
+.humidityDayMain {
+  font-size: 20px;
+}
+.humidityDayText {
+  font-weight: 300;
+}
+.bottomDay{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
