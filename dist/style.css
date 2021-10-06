@@ -1,3 +1,32 @@
+/* lato-300 - latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 300;
+  src: local(''),
+       url('fonts/lato-v20-latin-300.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('fonts/lato-v20-latin-300.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* lato-regular - latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: local(''),
+       url('fonts/lato-v20-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('fonts/lato-v20-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* lato-700 - latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  src: local(''),
+       url('fonts/lato-v20-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('fonts/lato-v20-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+
 body,
 html {
   margin: 0;
@@ -6,13 +35,12 @@ html {
 body {
   display: flex;
   flex-direction: column;
-  height: 100%;
 }
 .navBar {
   display: flex;
   align-items: center;
   width: 100%;
-  height: 100px;
+  height: 70px;
   background: rgb(172,219,202);
 background: linear-gradient(90deg, rgba(172,219,202,1) 25%, rgba(86,86,168,1) 89%);
 }
@@ -71,7 +99,7 @@ background: linear-gradient(90deg, rgba(172,219,202,1) 25%, rgba(86,86,168,1) 89
 }
 .content {
   display: flex;
-  height: 100%;
+  height: 90%;
 }
 .leftSideImg {
   background-image: url("img/cloudy.jpg");
@@ -84,10 +112,11 @@ background: linear-gradient(90deg, rgba(172,219,202,1) 25%, rgba(86,86,168,1) 89
   align-items: center;
   justify-content: center;
 }
+
 .leftSide {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 40px;
   justify-content: center;
   align-items: center;
   color: #fefefe;
@@ -110,6 +139,14 @@ background: linear-gradient(90deg, rgba(172,219,202,1) 25%, rgba(86,86,168,1) 89
   display: flex;
   align-items: center;
   gap: 60px;
+}
+@media only screen and (max-width: 900px) {
+  .leftSideImg {
+    min-width:300px;
+  }
+  .temp{
+    gap:10px;
+  }
 }
 #temperature {
   font-size: 40px;
@@ -253,8 +290,10 @@ input:checked + .slider .off {
   justify-content: center;
   flex-wrap: wrap;
   padding: 10px;
-  gap: 20px;
+  gap: 15px;
+  overflow: auto;
 }
+
 .card p {
   margin: 0;
   padding: 0;
@@ -336,4 +375,17 @@ input:checked + .slider .off {
   display: flex;
   flex-direction: column;
   gap: 5px;
+}
+.footer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  color: #3e3e3e;
+  font-weight: 700;
+  font-family: "Lato";
+  height: 40px;
+  width: 100%;
+  background: linear-gradient(90deg, rgba(172,219,202,1) 25%, rgba(86,86,168,1) 89%);
+
 }
